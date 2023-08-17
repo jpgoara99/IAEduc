@@ -14,10 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const cardDiv = document.createElement('div');
         cardDiv.className = 'col m-1 op1';
         const imageUrl = `../../imagens/${item.name}.png`;
+        const Url = `../../meterias_fundamental_1/${item.name}.html`;
         console.log(item.name);
         const cardContent = `
           <div class="d-flex justify-content-sm-center">
-            <a class="btn shadow-none" href="">
+            <a class="btn shadow-none" href="${Url}">
               <img src="${imageUrl}" class="img-fluid" width="270px">
               <h4 class="btn btn-warning text-light font-weight-bold d-flex justify-content-center">Consultar</h4>
             </a>
