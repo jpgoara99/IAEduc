@@ -1,0 +1,141 @@
+.body_bg{
+        background-color: #fffbed;
+
+    }
+
+.btn-tam{
+    padding:50px;
+    width: 50%;
+    height: 50px;
+}
+
+.eu_outro_nos{
+    background-color: #b1724d;
+    color: white;
+    box-shadow: 4px 2px 5px black;
+    
+
+}
+
+.corpo_gestos_movimento{
+    background-color: #C15143;
+    color: white;
+    box-shadow: 4px 2px 5px black;
+    
+}
+
+.tracos_sons_cores_formas{
+    background-color: #F23D4C;
+    color: white;
+    box-shadow: 4px 2px 5px black;
+   
+}
+
+.espacos_tempos_qtnd_relacoes{
+    background-color: #655A88;
+    color: white;
+    box-shadow: 4px 2px 5px black;
+    
+}
+
+.escuta_fala_pensamento_imaginacao{
+    background-color: #2C3359;
+    color: white;
+    box-shadow: 4px 2px 5px black;
+    
+}
+
+body section a.btn{
+    transition: width 0.4s ease-out, height 0.4s ease-out;
+    font-size: 1rem;
+}
+body section a.btn:hover{
+    color: white;
+    width: 550px;
+    height: 60px;
+    
+}
+
+
+.eu_outro_nos:hover{
+    background: #7b4f35;
+    
+}
+.corpo_gestos_movimento:hover{
+    background:#923e33;
+}
+.tracos_sons_cores_formas:hover{
+    background:#b52e39;
+}
+.espacos_tempos_qtnd_relacoes:hover{
+    background: #50486b;
+}
+.escuta_fala_pensamento_imaginacao:hover{
+    background: #161a31;
+}
+
+.bg{
+    background: url(../imagens/bg-topo.png);
+    width: 100%;
+    height: 240px;
+    margin: auto;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: flex;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.221);
+}
+
+.icon_materia{
+    position: relative;
+    margin: 2px;
+    font-size: 1.3em;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10em;
+}
+
+footer{
+
+    text-align: center;
+    margin: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.221);
+    background: #EEC64D;
+    width: 100%;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    padding: 0.4em;
+  
+}
+
+@media (min-width:100px) and (max-width:420px){
+    .btn-tam{
+        width: 100%;
+    }
+    a{
+        font-size: 13px !important;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+@media (min-width:1080px){
+    footer{
+        background: #EEC64D;
+        width: 100%;
+        clear: both;
+        margin-top: 21px;
+        position: fixed;
+        bottom: 0;
+        z-index: 1030;
+    }
+}
