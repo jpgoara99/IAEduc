@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos-login/style.css">
+    <link rel="stylesheet" href="estilos-login/media-queries.css">
+    <link rel="shortcut icon" href="imagens/logo-favicon.ico" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <section id="login">
+            <div id="imagem">
+                <!--aqui vai a imagem no CSS-->
+            </div>
+            <div id="formulario">
+                <h1>Login</h1>
+                <p>Seja bem-vindo(a) novamente. Faça seu login para acessar sua conta.</p>
+                <form action="login.php" method="post" autocomplete="on">
+                    <div class="campo">
+                        <ion-icon name="mail"></ion-icon>
+                        <input type="email" name="login" id="ilogin" placeholder="Seu e-mail" required autocomplete="email" maxlength="30">
+                        <label for="ilogin">E-mail: </label>
+                    </div>
+                    <div class="campo">
+                        <ion-icon name="lock-closed"></ion-icon>
+                        <input type="password" name="senha" id="isenha" placeholder="Sua senha" required minlength="8" maxlength="20">
+                        <label for="isenha">Senha: </label>
+                    </div>
+                    <input type="submit" value="Fazer login">
+                    <a href="esqueci.html" class="botao">Esqueci minha senha</a>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
