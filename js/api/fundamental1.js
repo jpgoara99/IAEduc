@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         cardDiv.addEventListener('click', () => {
           localStorage.setItem('classId', item.id);
+          sessionStorage.setItem('className', item.name);
         });
       });
     })
