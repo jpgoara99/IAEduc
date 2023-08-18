@@ -34,14 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }  
     return `
       <li class="mt-3 mb-2 btn d-flex justify-content-center col-md-12">
-        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="${item.link}">
+        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center"data-item-name="${item.name}"  data-item-id="${item.id}" href="../../meterias_fundamental_1/1_ano.html">
           ${item.name}<ion-icon class="icon_materia" name="${iconName}"></ion-icon>
         </a>
       </li>
     `;
   }
-
-
 
   fetch("http://localhost:3333/subject/" + localStorage.getItem('classId'),{ headers: headers })
     .then(response =>  response.json())
@@ -69,9 +67,20 @@ document.addEventListener("DOMContentLoaded", function() {
         bgElement.innerHTML = `
           <h1 class="p-3 text-center font-weight-bold">Planos de aula do ${name}</h1>
           `;
-        console.log(item)
         const listItemHTML = createListItem(item);
         listContainer.innerHTML += listItemHTML;
+
+       
+      });
+      const links = document.querySelectorAll('.container a');
+      links.forEach(link => {
+        link.addEventListener('click', function(event) {
+          const itemId = event.currentTarget.getAttribute('data-item-id');
+          const itemName = event.currentTarget.getAttribute('data-item-name');
+          alert(itemName)
+          sessionStorage.setItem('selectedItemName', itemName);
+          sessionStorage.setItem('selectedItemId', itemId);
+        });
       });
     })
     .catch(error => {
