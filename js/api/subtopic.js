@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     return `
       <div class="bg_${subjectClass}">
-        <h1 class="p-3 text-center font-weight-bold text-light">${name}</h1>
       </div>
     `;
   }
