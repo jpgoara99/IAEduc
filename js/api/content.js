@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data.forEach(item => {
         dynamicContent = `
         <h2>Objetivos da aula</h2>
-        <p>${item.objective}</p>
+        <p>${item.objective}</p> 
 
         <h2>habilidades da BNCC contempladas</h2>
       `;
@@ -50,8 +50,25 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         
       });
-     
+      let name= ''
+      const className = localStorage.getItem('className'); 
+      if(className == '1_ano'){
+        name = '1º Ano'
+      }else if(className == '2_ano'){
+        name = '2º Ano'
+      }else if(className == '3_ano'){
+        name = '3º Ano'
+      }else if(className == '4_ano'){
+        name = '4º Ano'
+      }else if(className == '5_ano'){
+        name = '5º Ano'
+      } 
+      document.title = name;
+      const nametitle = localStorage.getItem('subtopicName')
+      var titleElement = document.querySelector('.title');
+      var areaName = nametitle; // Substitua isso pelo valor que você deseja obter dinamicamente
 
+      titleElement.textContent = areaName;
       articleContent.innerHTML += dynamicContent;
      
     })
