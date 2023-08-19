@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   var headers = {
-    "Authorization": "Bearer " +  sessionStorage.getItem("token") 
+    "Authorization": "Bearer " +  localStorage.getItem("token") 
   };
   verificarToken()
 
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
         cardDiv.className = 'col m-1 op1';
         const imageUrl = `../../imagens/${item.name}.png`;
         const Url = `../../meterias_fundamental_1/${item.name}.html`;
-        console.log(item.name);
         const cardContent = `
           <div class="d-flex justify-content-sm-center">
             <a class="btn shadow-none" href="${Url}">
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         cardDiv.addEventListener('click', () => {
           localStorage.setItem('classId', item.id);
-          sessionStorage.setItem('className', item.name);
+          localStorage.setItem('className', item.name);
         });
       });
     })
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function verificarToken() {
-  var token = sessionStorage.getItem("token");
+  var token = localStorage.getItem("token");
   if (!token) {
     // Redirecionar para a página de login
     window.location.href = "index.html";

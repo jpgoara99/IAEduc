@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   var headers = {
-    "Authorization": "Bearer " +  sessionStorage.getItem("token") 
+    "Authorization": "Bearer " +  localStorage.getItem("token") 
   };
   verificarToken()
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }  
     return `
       <li class="mt-3 mb-2 btn d-flex justify-content-center col-md-12">
-        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center"data-item-name="${item.name}"  data-item-id="${item.id}" href="../../meterias_fundamental_1/1_ano.html">
+        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="../../meterias_fundamental_1/disciplinas_primeiro_ano/artes.html" data-item-name="${item.name}" data-item-id="${item.id}" >
           ${item.name}<ion-icon class="icon_materia" name="${iconName}"></ion-icon>
         </a>
       </li>
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       data.forEach(item => {
         let name= ''
-        const className = sessionStorage.getItem('className'); 
+        const className = localStorage.getItem('className'); 
         if(className == '1_ano'){
           name = '1º Ano'
         }else if(className == '2_ano'){
@@ -77,9 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener('click', function(event) {
           const itemId = event.currentTarget.getAttribute('data-item-id');
           const itemName = event.currentTarget.getAttribute('data-item-name');
-          alert(itemName)
-          sessionStorage.setItem('selectedItemName', itemName);
-          sessionStorage.setItem('selectedItemId', itemId);
+          localStorage.setItem('subjectName', itemName);
+          localStorage.setItem('subjectId', itemId);
         });
       });
     })
@@ -89,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function verificarToken() {
-  var token = sessionStorage.getItem("token");
+  var token = localStorage.getItem("token");
   if (!token) {
     // Redirecionar para a página de login
     window.location.href = "index.html";

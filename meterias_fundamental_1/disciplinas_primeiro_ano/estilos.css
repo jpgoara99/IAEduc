@@ -121,7 +121,7 @@ body section a.btn:hover{
 }
 
 .bg_ciencias{
-    background: #79AB46;
+    background: url(../../imagens/ciencias.svg);
     width: 100%;
     height: 240px;
     margin: auto;
@@ -134,7 +134,7 @@ body section a.btn:hover{
 }
 
 .bg_historia{
-    background: #F25C05;
+    background: url(../../imagens/historia.svg);
     width: 100%;
     height: 240px;
     margin: auto;
@@ -147,7 +147,7 @@ body section a.btn:hover{
 }
 
 .bg_geografia{
-    background: #F2BD02;
+    background: url(../../imagens/geografia.svg);
     width: 100%;
     height: 240px;
     margin: auto;
@@ -160,7 +160,7 @@ body section a.btn:hover{
 }
 
 .bg_edFisica{
-    background: #2B6D7D;
+    background: url(../../imagens/ed_fisica.svg);
     width: 100%;
     height: 240px;
     margin: auto;
@@ -173,7 +173,7 @@ body section a.btn:hover{
 }
 
 .bg_artes{
-    background: #281259cd;
+    background: url(../../imagens/artes.svg);
     width: 100%;
     height: 240px;
     margin: auto;
@@ -186,7 +186,7 @@ body section a.btn:hover{
 }
 
 .bg_religiao{
-    background: #BF9056;
+    background: url(../../imagens/religiao.svg);
     width: 100%;
     height: 240px;
     margin: auto;

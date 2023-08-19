@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function verificarToken() {
-  var token = sessionStorage.getItem("token");
+  var token = localStorage.getItem("token");
   if (!token) {
     // Redirecionar para a página de login
     window.location.href = "index.html";

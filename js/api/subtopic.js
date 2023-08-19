@@ -1,75 +1,153 @@
 document.addEventListener("DOMContentLoaded", function() {
   var headers = {
-    "Authorization": "Bearer " +  sessionStorage.getItem("token") 
+    "Authorization": "Bearer " +  localStorage.getItem("token") 
   };
   verificarToken()
 
+
   function createListItem(item) {
+    let name= localStorage.getItem('subjectName');
     let iconName = '';
     let subjectClass ='';
-    if (item.name === 'Português') {
+    if (name === 'Português') {
       subjectClass = 'portugues';
       iconName = 'book-outline';
-    } else if (item.name === 'Matemática') {
+    } else if (name === 'Matemática') {
       subjectClass = 'matematica';
       iconName = 'calculator-outline';
-    } else if(item.name == 'Ciências'){
+    } else if(name == 'Ciências'){
       subjectClass = 'ciencias';
       iconName = 'planet-outline';
-    } else if(item.name == 'História'){
+    } else if(name == 'História'){
       subjectClass = 'historia';
       iconName = 'library-outline';
-    } else if(item.name == 'Geografia'){
+    } else if(name == 'Geografia'){
       subjectClass = 'geografia';
       iconName = 'earth-outline';
-    } else if(item.name == 'Ensino Religioso'){
+    } else if(name == 'Ensino Religioso'){
       subjectClass = 'religioso';
       iconName = 'sparkles-outline';
-    } else if(item.name == 'Educação Física'){
+    } else if(name == 'Educação Física'){
       subjectClass = 'ed_fisica';
       iconName = 'barbell-outline';
-    } else if(item.name == 'Artes'){
+    } else if(name == 'Artes'){
       subjectClass = 'artes';
       iconName = 'color-palette-outline';
     }  
     return `
       <li class="mt-3 mb-2 btn d-flex justify-content-center col-md-12">
-        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="${item.link}">
+        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="../../meterias_fundamental_1/disciplinas_quinto_ano/matematica/area.html" data-subject-name="${name}" data-subtopic-name="${item.name} "data-subtopic-id="${item.id}">
           ${item.name}<ion-icon class="icon_materia" name="${iconName}"></ion-icon>
         </a>
       </li>
     `;
   }
 
-  fetch("http://localhost:3333/subject/" + localStorage.getItem('classId'),{ headers: headers })
+  function createSubjectDiv(item) {
+    let name= localStorage.getItem('subjectName');
+    let iconName = '';
+    let subjectClass ='';
+    if (name === 'Português') {
+      subjectClass = 'portugues';
+      iconName = 'book-outline';
+    } else if (name === 'Matemática') {
+      subjectClass = 'matematica';
+      iconName = 'calculator-outline';
+    } else if(name == 'Ciências'){
+      subjectClass = 'ciencias';
+      iconName = 'planet-outline';
+    } else if(name == 'História'){
+      subjectClass = 'historia';
+      iconName = 'library-outline';
+    } else if(name == 'Geografia'){
+      subjectClass = 'geografia';
+      iconName = 'earth-outline';
+    } else if(name == 'Ensino Religioso'){
+      subjectClass = 'religioso';
+      iconName = 'sparkles-outline';
+    } else if(name == 'Educação Física'){
+      subjectClass = 'ed_fisica';
+      iconName = 'barbell-outline';
+    } else if(name == 'Artes'){
+      subjectClass = 'artes';
+      iconName = 'color-palette-outline';
+    }
+    return `
+      <div class="bg_${subjectClass}">
+        <h1 class="p-3 text-center font-weight-bold text-light">${name}</h1>
+      </div>
+    `;
+  }
+
+
+  function createFooter() {
+    let name= localStorage.getItem('subjectName');
+    let iconName = '';
+    let subjectClass ='';
+    if (name === 'Português') {
+      subjectClass = 'portugues';
+      iconName = 'book-outline';
+    } else if (name === 'Matemática') {
+      subjectClass = 'matematica';
+      iconName = 'calculator-outline';
+    } else if(name == 'Ciências'){
+      subjectClass = 'ciencias';
+      iconName = 'planet-outline';
+    } else if(name == 'História'){
+      subjectClass = 'historia';
+      iconName = 'library-outline';
+    } else if(name == 'Geografia'){
+      subjectClass = 'geografia';
+      iconName = 'earth-outline';
+    } else if(name == 'Ensino Religioso'){
+      subjectClass = 'religioso';
+      iconName = 'sparkles-outline';
+    } else if(name == 'Educação Física'){
+      subjectClass = 'ed_fisica';
+      iconName = 'barbell-outline';
+    } else if(name == 'Artes'){
+      subjectClass = 'artes';
+      iconName = 'color-palette-outline';
+    }
+    const footer = document.createElement('footer');
+    footer.classList.add('fixed-bottom', `${subjectClass}-footer`);
+  
+    const copyrightText = document.createTextNode(`&copy; 2023 InovAssessoria. Todos os direitos reservados.`);
+    footer.appendChild(copyrightText);
+  
+    return footer;
+  }
+
+  fetch("http://localhost:3333/subtopic/" + localStorage.getItem('subjectId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
+      const subjectDivContainer = document.querySelector('.subject-div-container');
       const listContainer = document.querySelector('.container');
-      
 
       data.forEach(item => {
-        let name= ''
-        const className = sessionStorage.getItem('className'); 
-        if(className == '1_ano'){
-          name = '1º Ano'
-        }else if(className == '2_ano'){
-          name = '2º Ano'
-        }else if(className == '3_ano'){
-          name = '3º Ano'
-        }else if(className == '4_ano'){
-          name = '4º Ano'
-        }else if(className == '5_ano'){
-          name = '5º Ano'
-        }
-        document.title = name;
-        const bgElement = document.querySelector('.bg');
-
-        bgElement.innerHTML = `
-          <h1 class="p-3 text-center font-weight-bold">Planos de aula do ${name}</h1>
-          `;
-        console.log(item)
         const listItemHTML = createListItem(item);
         listContainer.innerHTML += listItemHTML;
+        const subjectDivHTML = createSubjectDiv(item);
+        subjectDivContainer.innerHTML += subjectDivHTML;
+
+        const footer = createFooter(item.class);
+        subjectDivContainer.appendChild(footer);
+      });
+
+      // Add click event listener to each link
+      const links = document.querySelectorAll('.container a');
+      links.forEach(link => {
+        link.addEventListener('click', function(event) {
+          const subjectName = event.currentTarget.getAttribute('data-subject-name');
+          const subtopicName = event.currentTarget.getAttribute('data-subtopic-name');
+          const subtopicId = event.currentTarget.getAttribute('data-subtopic-id');
+          
+          
+          localStorage.setItem('subtopicName', subtopicName);
+          localStorage.setItem('subtopicId', subtopicId); 
+          localStorage.setItem('subjectName', subjectName);
+          window.location.href = "../../meterias_fundamental_1/disciplinas_quinto_ano/matematica/area.html"
+        });
       });
     })
     .catch(error => {
@@ -78,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function verificarToken() {
-  var token = sessionStorage.getItem("token");
+  var token = localStorage.getItem("token");
   if (!token) {
     // Redirecionar para a página de login
     window.location.href = "index.html";

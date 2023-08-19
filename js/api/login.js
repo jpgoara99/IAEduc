@@ -28,7 +28,7 @@ function fazerLogin(event) {
     }
   })
   .then(data => {
-    sessionStorage.setItem('token', data.token);
+    localStorage.setItem('token', data.token);
     window.location.href = '../../inicio.html'
   })
   .catch(error => {
