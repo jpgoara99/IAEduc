@@ -96,7 +96,7 @@ body section a.btn:hover{
 
 /*estilização de cabeçalho*/
 .bg_portugues{
-    background: blue;
+    background: url(../../imagens/portugues.svg);
     height: 240px;
     width: 100%;
     margin: auto;
