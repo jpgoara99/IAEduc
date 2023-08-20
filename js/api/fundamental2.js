@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch("http://localhost:3333/class/1",{ headers: headers })
+  fetch("http://localhost:3333/class/2",{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
 
