@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }  
     return `
       <li class="mt-3 mb-2 btn d-flex justify-content-center col-md-12">
-        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="../../meterias_fundamental_1/disciplinas_primeiro_ano/artes.html" data-item-name="${item.name}" data-item-id="${item.id}" >
+        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="../../subtopic/subtopic.html" data-item-name="${item.name}" data-item-id="${item.id}" >
           ${item.name}<ion-icon class="icon_materia" name="${iconName}"></ion-icon>
         </a>
       </li>

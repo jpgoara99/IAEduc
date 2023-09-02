@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const cardDiv = document.createElement('div');
         cardDiv.className = 'col m-1 op1';
         const imageUrl = `../../imagens/${item.name}.png`;
-        const Url = `../../meterias_fundamental_1/1_ano.html`;
+        const Url = `../../subjects/subject.html`;
         const cardContent = `
           <div class="d-flex justify-content-sm-center">
             <a class="btn shadow-none" href="${Url}">

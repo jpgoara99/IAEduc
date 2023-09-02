@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }  
     return `
       <li class="mt-3 mb-2 btn d-flex justify-content-center col-md-12">
-        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="../../meterias_fundamental_1/disciplinas_quinto_ano/matematica/area.html" data-subject-name="${name}" data-subtopic-name="${item.name} "data-subtopic-id="${item.id}">
+        <a class="btn btn-lg btn-tam ${subjectClass} d-flex justify-content-center" href="../../content/content.html" data-subject-name="${name}" data-subtopic-name="${item.name} "data-subtopic-id="${item.id}">
           ${item.name}<ion-icon class="icon_materia" name="${iconName}"></ion-icon>
         </a>
       </li>
