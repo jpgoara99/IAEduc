@@ -11,7 +11,7 @@ function fazerLogin(event) {
   var usernameInput = document.querySelector('input[type="text"]');
   var passwordInput = document.querySelector('input[type="password"]');
 
-  fetch('http://localhost:3333/sessions', {
+  fetch('http://191.101.14.34:3000/sessions', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'

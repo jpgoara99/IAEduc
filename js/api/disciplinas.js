@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
       subjectClass = 'geografia';
       iconName = 'earth-outline';
     } else if(item.name == 'Ensino Religioso'){
-      subjectClass = 'religioso';
+      subjectClass = 'religiao';
       iconName = 'sparkles-outline';
     } else if(item.name == 'Educação Física'){
       subjectClass = 'ed_fisica';
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     `;
   }
 
-  fetch("http://localhost:3333/subject/" + localStorage.getItem('classId'),{ headers: headers })
+  fetch("http://191.101.14.34:3000/subject/" + localStorage.getItem('classId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
       const listContainer = document.querySelector('.container');

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch("http://localhost:3333/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
+  fetch("http://191.101.14.34:3000/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
 
