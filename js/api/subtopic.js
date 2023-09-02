@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
       subjectClass = 'geografia';
       iconName = 'earth-outline';
     } else if(name == 'Ensino Religioso'){
-      subjectClass = 'religioso';
+      subjectClass = 'religiao';
       iconName = 'sparkles-outline';
     } else if(name == 'Educação Física'){
       subjectClass = 'ed_fisica';
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
       subjectClass = 'geografia';
       iconName = 'earth-outline';
     } else if(name == 'Ensino Religioso'){
-      subjectClass = 'religioso';
+      subjectClass = 'religiao';
       iconName = 'sparkles-outline';
     } else if(name == 'Educação Física'){
       subjectClass = 'ed_fisica';
@@ -72,8 +72,10 @@ document.addEventListener("DOMContentLoaded", function() {
       subjectClass = 'artes';
       iconName = 'color-palette-outline';
     }
+    console.log(subjectClass)
     return `
       <div class="bg_${subjectClass}">
+
       </div>
     `;
   }
@@ -99,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
       subjectClass = 'geografia';
       iconName = 'earth-outline';
     } else if(name == 'Ensino Religioso'){
-      subjectClass = 'religioso';
+      subjectClass = 'religiao';
       iconName = 'sparkles-outline';
     } else if(name == 'Educação Física'){
       subjectClass = 'ed_fisica';
