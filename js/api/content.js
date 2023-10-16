@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch("http://191.101.14.34:3000/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
+  fetch(localStorage.getItem('host') + "/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
 
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
         dynamicContent = `
         <h2>Objetivos da aula</h2>
         <p>${item.objective}</p> 
-
         <h2>habilidades da BNCC contempladas</h2>
       `;
         item.bncc.forEach(item => {
@@ -69,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var areaName = nametitle; // Substitua isso pelo valor que você deseja obter dinamicamente
 
       titleElement.textContent = areaName;
+      articleContent.innerHTML = dynamicContent;
      
     })
     .catch(error => {

@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     `;
   }
 
-  fetch("http://191.101.14.34:3000/subject/" + localStorage.getItem('classId'),{ headers: headers })
+  fetch(localStorage.getItem('host') + "/subject/" + localStorage.getItem('classId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
       const listContainer = document.querySelector('.container');

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-  fetch("http://191.101.14.34:3000/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
+  fetch(localStorage.getItem('host') + "/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
     let dynamicContent = ''

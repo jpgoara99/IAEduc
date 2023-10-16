@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return footer;
   }
 
-  fetch("http://191.101.14.34:3000/subtopic/" + localStorage.getItem('subjectId'),{ headers: headers })
+  fetch(localStorage.getItem('host') + "/subtopic/" + localStorage.getItem('subjectId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
       const subjectDivContainer = document.querySelector('.subject-div-container');

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch("http://191.101.14.34:3000/class/2",{ headers: headers })
+  fetch(localStorage.getItem('host') + "/class/2",{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
 
