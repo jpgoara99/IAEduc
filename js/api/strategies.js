@@ -4,26 +4,30 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  function createDiv(data){
-    data.forEach(item => {
-      dynamicContent += `
-      <h2 class="text-center">:</h2>
-
-      `;
-    })
-  }
-
-
-  fetch(localStorage.getItem('host') + "/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
+  fetch(localStorage.getItem('host') + "/strategies/" +localStorage.getItem('content_id'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
-    let dynamicContent = ''
+      const container = document.querySelector('.container.model');
+      container.innerHTML = '';
+      console.log(data)
+      data.forEach(strategy => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <h2 class="text-center">${strategy.title}:</h2>
+          <h3 class="text-center">Objetivo:</h3>
+          <p>${strategy.objective}</p>
+          <h3 class="text-center">Descrição:</h3>
+          <ul>
+            ${strategy.description.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+          <h3 class="text-center">Benefícios:</h3>
+          <ul>
+            ${strategy.benefits.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        `;
 
-    data.forEach(item => {
-      createDiv(item)
-    })
-
-    articleContent.innerHTML += dynamicContent;
+        container.appendChild(div);
+      });
     })
     .catch(error => {
       console.error("Ocorreu um erro na requisição:", error);

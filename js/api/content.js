@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   fetch(localStorage.getItem('host') + "/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
-
+      localStorage.setItem('content_id', data[0].id);
       const articleContent = document.querySelector('article');
       let dynamicContent
       
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
       } 
       document.title = name;
       const nametitle = localStorage.getItem('subtopicName')
+
       var titleElement = document.querySelector('.title');
       var areaName = nametitle; // Substitua isso pelo valor que você deseja obter dinamicamente
 
