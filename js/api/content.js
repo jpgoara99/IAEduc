@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
       var areaName = nametitle; // Substitua isso pelo valor que você deseja obter dinamicamente
 
       titleElement.textContent = areaName;
-      articleContent.innerHTML += dynamicContent;
      
     })
     .catch(error => {

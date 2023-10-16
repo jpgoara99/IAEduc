@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function() {
           localStorage.setItem('subtopicName', subtopicName);
           localStorage.setItem('subtopicId', subtopicId); 
           localStorage.setItem('subjectName', subjectName);
-          window.location.href = "../../meterias_fundamental_1/disciplinas_quinto_ano/matematica/area.html"
         });
       });
     })
