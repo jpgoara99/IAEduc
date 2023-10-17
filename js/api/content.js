@@ -66,8 +66,45 @@ document.addEventListener("DOMContentLoaded", function() {
       const nametitle = localStorage.getItem('subtopicName')
 
       var titleElement = document.querySelector('.title');
-      var areaName = nametitle; // Substitua isso pelo valor que você deseja obter dinamicamente
+      var areaName = nametitle; 
 
+
+      name= localStorage.getItem('subjectName');
+      let iconName = '';
+      let subjectClass ='';
+      if (name === 'Português') {
+        subjectClass = 'portugues';
+        iconName = 'book-outline';
+      } else if (name === 'Matemática') {
+        subjectClass = 'matematica';
+        iconName = 'calculator-outline';
+      } else if(name == 'Ciências'){
+        subjectClass = 'ciencias';
+        iconName = 'planet-outline';
+      } else if(name == 'História'){
+        subjectClass = 'historia';
+        iconName = 'library-outline';
+      } else if(name == 'Geografia'){
+        subjectClass = 'geografia';
+        iconName = 'earth-outline';
+      } else if(name == 'Ensino Religioso'){
+        subjectClass = 'religiao';
+        iconName = 'sparkles-outline';
+      } else if(name == 'Educação Física'){
+        subjectClass = 'ed_fisica';
+        iconName = 'barbell-outline';
+      } else if(name == 'Artes'){
+        subjectClass = 'artes';
+        iconName = 'color-palette-outline';
+      }
+      var minhaMain = document.querySelector("main");
+      var minhaHeader = document.querySelector("header");
+      var body = document.body;
+      minhaMain.classList.add(`main_${subjectClass}`,`${subjectClass}` );
+      minhaHeader.classList.add(`header_${subjectClass}`,`${subjectClass}`);
+      body.classList.add(`body_${subjectClass}`);
+      
+      
       titleElement.textContent = areaName;
       articleContent.innerHTML = dynamicContent;
      

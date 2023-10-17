@@ -19,6 +19,85 @@
     height: 100px;
 }
 
+/*classes para dos botões*/
+
+.btn-1_ano{
+        background-color: rgba(105, 212, 245, 1);
+}
+
+.btn-2_ano{
+    background-color: rgba(120, 139, 245, 1);
+}
+
+.btn-3_ano{
+    background-color: rgba(236, 162, 245, 1);
+}
+
+.btn-4_ano{
+    background-color: rgba(245, 177, 105, 1);
+}
+
+.btn-5_ano{
+    background-color: rgba(186, 245, 83, 1);
+}
+
+/*fim do fundamental 1*/
+
+.btn-6_ano{
+    background-color: rgba(78, 171, 204, 1);
+}
+
+.btn-7_ano{
+    background-color: rgba(39, 64, 204, 1);
+}
+
+.btn-8_ano{
+    background-color: rgba(140, 29, 204, 1);
+}
+
+.btn-9_ano{
+    background-color: rgba(204, 49, 129, 1);
+}
+
+/*fim do fundamental 2 */
+
+.btn-2_ano:hover{
+    background-color: #1916a4;  
+}
+
+.btn-1_ano:hover{
+    background-color: rgb(7, 117, 150);
+}
+
+.btn-3_ano:hover{
+    background-color: rgb(126, 31, 138);
+}
+
+.btn-4_ano:hover{
+    background-color: rgb(145, 83, 16);
+}
+
+.btn-5_ano:hover{
+    background-color: rgb(77, 112, 18);
+}
+
+.btn-6_ano:hover{
+    background-color: rgb(21, 81, 102);
+}
+
+.btn-7_ano:hover{
+    background-color: rgb(21, 37, 125);
+}
+
+.btn-8_ano:hover{
+    background-color: rgb(78, 9, 117);
+}
+
+.btn-9_ano:hover{
+    background-color: rgb(102, 14, 59);
+}
+
+/* fim das classes para dos botões*/
 
 .wall{
     background: url(../imagens/bg-ap.png);
@@ -39,25 +118,17 @@
     color: rgb(5, 5, 5);
 }
 
-.op1 a:hover{
-    color: #d7a91f;
-
-   
-}
-
 .op1 p{
     text-align: center;
     margin-top: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.btn-tam{
-    width: 100%;
-   
-}
+
 
 .rodape{
-    background: #EEC64D;
+    background: #020139;
+    position: fixed;
     width: 100%;
     display: block;
     clear: both;
@@ -65,12 +136,13 @@
     margin-top: 21px;
     bottom: 0;
     left: 0;
+    color: white;
     padding: 0.4em;
 }
 
 @media (min-width:600px) and (max-width:1034px){
         .rodape{
-        background: #EEC64D;
+        background: #020139;
         width: 100%;
         clear: both;
         margin-top: 21px;
@@ -84,7 +156,7 @@
 }
 
 @media (min-width:100px) and (max-width:420px){
-    .btn-tam{
+    .btn-t_anoam{
         width: 100%;
         font-size: 12px;
     }
@@ -101,7 +173,7 @@
 
 @media (min-width:1080px){
     .rodape{
-        background: #EEC64D;
+        background: #020139;
         width: 100%;
         clear: both;
         margin-top: 21px;

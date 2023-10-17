@@ -1,6 +1,6 @@
 .body_bg{
     background-color: #fffbed;
-
+    color: white
 }
 
 .btn-tam{
@@ -121,17 +121,15 @@ font-weight: bold;
 }
 
 footer{
-
     text-align: center;
     margin: auto;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.221);
-    background: #EEC64D;
+    background: #020139;
     width: 100%;
     clear: both;
     bottom: 0;
     padding: 0.4em;
-  
-
+    position: fixed;
 }
 
 @media (min-width:100px) and (max-width:420px){
