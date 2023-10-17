@@ -4,31 +4,44 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch(localStorage.getItem('host') + "/supportActivity/" +localStorage.getItem('content_id'),{ headers: headers })
+  function fillAtividadesSection(data) {
+    const atividades = data.pdf;
+    const atividadesList = document.getElementById('atividades-list');
+    atividades.forEach((atividade ,index)=> {
+      console.log(atividade);
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = atividade;
+      link.textContent = `Atividade ${index + 1}`;
+      listItem.appendChild(link);
+      atividadesList.appendChild(listItem);
+      
+    });
+    const downloadLink = document.getElementById("download-link");
+    downloadLink.setAttribute("href", data.slide);
+  }
+  
+  // Função para preencher a seção de material visual
+  function fillMaterialVisualSection(materialVisual) {
+    const iframeContainer = document.getElementById('iframe-container');
+    materialVisual.forEach(video => {
+      const iframe = document.createElement('iframe');
+      console.log(video);
+      iframe.src = video;
+      iframe.frameBorder = 0;
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.allowFullscreen = true;
+      iframeContainer.appendChild(iframe);
+    });
+  }
+
+
+  fetch(localStorage.getItem('host') + "/supportActivity/" + localStorage.getItem('content_id'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
-      const container = document.querySelector('.container.model');
-      const activitiesList = document.querySelector('.text-center ul');
-      const slideLink = document.querySelector('.responsive-button');
-
-      // Limpando a lista de atividades existente
-      activitiesList.innerHTML = '';
-
-      data.activities.forEach(activity => {
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = activity.link;
-        link.textContent = activity.name;
-        listItem.appendChild(link);
-        activitiesList.appendChild(listItem);
-      });
-
-      // Atualizando o link para baixar o slide da aula
-      slideLink.href = data.slideLink;
-
-      // Adicione qualquer outro código aqui para lidar com outros elementos dinâmicos
-
-    
+      console.log(data);
+      fillAtividadesSection(data);
+      fillMaterialVisualSection(data.videos);
     })
     .catch(error => {
       console.error("Ocorreu um erro na requisição:", error);
