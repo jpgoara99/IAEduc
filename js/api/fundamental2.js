@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <div class="d-flex justify-content-sm-center">
             <a class="btn shadow-none" href="${Url}">
               <img src="${imageUrl}" class="img-fluid" width="270px">
-              <h4 class="btn btn-warning text-light font-weight-bold d-flex justify-content-center">Consultar</h4>
+              <h4 class="btn text-light font-weight-bold d-flex justify-content-center btn-${item.name}">Consultar</h4>
             </a>
           </div>
         `;
