@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   var loginForm = document.getElementById('loginForm');
-  localStorage.setItem('host', 'http://localhost:3000')  
+  localStorage.setItem('host', 'https://api.iaeduc.com.br')  
 
 
   loginForm.addEventListener('submit', fazerLogin);

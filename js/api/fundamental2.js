@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data.forEach(item => {
         const cardDiv = document.createElement('div');
         cardDiv.className = 'col m-1 op1';
-        const imageUrl = `../../imagens/${item.name}.png`;
+        const imageUrl = `../../imagens/${item.name}.svg`;
         const Url = `../../subjects/subject.html`;
         const cardContent = `
           <div class="d-flex justify-content-sm-center">
