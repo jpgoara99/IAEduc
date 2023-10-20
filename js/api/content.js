@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch("http://191.101.14.34:3000/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
+  fetch(localStorage.getItem('host') + "/content/" +localStorage.getItem('subtopicId'),{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
-
+      localStorage.setItem('content_id', data[0].id);
       const articleContent = document.querySelector('article');
       let dynamicContent
       
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
         dynamicContent = `
         <h2>Objetivos da aula</h2>
         <p>${item.objective}</p> 
-
         <h2>habilidades da BNCC contempladas</h2>
       `;
         item.bncc.forEach(item => {
@@ -65,11 +64,49 @@ document.addEventListener("DOMContentLoaded", function() {
       } 
       document.title = name;
       const nametitle = localStorage.getItem('subtopicName')
-      var titleElement = document.querySelector('.title');
-      var areaName = nametitle; // Substitua isso pelo valor que você deseja obter dinamicamente
 
+      var titleElement = document.querySelector('.title');
+      var areaName = nametitle; 
+
+
+      name= localStorage.getItem('subjectName');
+      let iconName = '';
+      let subjectClass ='';
+      if (name === 'Português') {
+        subjectClass = 'portugues';
+        iconName = 'book-outline';
+      } else if (name === 'Matemática') {
+        subjectClass = 'matematica';
+        iconName = 'calculator-outline';
+      } else if(name == 'Ciências'){
+        subjectClass = 'ciencias';
+        iconName = 'planet-outline';
+      } else if(name == 'História'){
+        subjectClass = 'historia';
+        iconName = 'library-outline';
+      } else if(name == 'Geografia'){
+        subjectClass = 'geografia';
+        iconName = 'earth-outline';
+      } else if(name == 'Ensino Religioso'){
+        subjectClass = 'religiao';
+        iconName = 'sparkles-outline';
+      } else if(name == 'Educação Física'){
+        subjectClass = 'ed_fisica';
+        iconName = 'barbell-outline';
+      } else if(name == 'Artes'){
+        subjectClass = 'artes';
+        iconName = 'color-palette-outline';
+      }
+      var minhaMain = document.querySelector("main");
+      var minhaHeader = document.querySelector("header");
+      var body = document.body;
+      minhaMain.classList.add(`main_${subjectClass}`,`${subjectClass}` );
+      minhaHeader.classList.add(`header_${subjectClass}`,`${subjectClass}`);
+      body.classList.add(`body_${subjectClass}`);
+      
+      
       titleElement.textContent = areaName;
-      articleContent.innerHTML += dynamicContent;
+      articleContent.innerHTML = dynamicContent;
      
     })
     .catch(error => {

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   verificarToken()
 
-  fetch("http://191.101.14.34:3000/class/2",{ headers: headers })
+  fetch(localStorage.getItem('host') + "/class/2",{ headers: headers })
     .then(response =>  response.json())
     .then(data => {
 
@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
       data.forEach(item => {
         const cardDiv = document.createElement('div');
         cardDiv.className = 'col m-1 op1';
-        const imageUrl = `../../imagens/${item.name}.png`;
+        const imageUrl = `../../imagens/${item.name}.svg`;
         const Url = `../../subjects/subject.html`;
         const cardContent = `
           <div class="d-flex justify-content-sm-center">
             <a class="btn shadow-none" href="${Url}">
               <img src="${imageUrl}" class="img-fluid" width="270px">
-              <h4 class="btn btn-warning text-light font-weight-bold d-flex justify-content-center">Consultar</h4>
+              <h4 class="btn text-light font-weight-bold d-flex justify-content-center btn-${item.name}">Consultar</h4>
             </a>
           </div>
         `;

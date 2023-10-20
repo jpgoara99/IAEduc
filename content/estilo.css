@@ -1,15 +1,61 @@
 
-        ::selection{
-            background-color: #691C1F;
+        body{
+            background-color: rgb(255, 254, 254);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
             color: azure;
         }
-
-        body{
+        .body_matematica {
             background-color: rgb(250, 205, 205);
             font-family: Arial, Helvetica, sans-serif;
             font-size: 17px;
             color: azure;
         }
+
+        .body_portugues{
+            background-color: rgb(205, 236, 250);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+        .body_historia{
+            background-color: rgb(255, 231, 172);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+        .body_geografia{
+            background-color: rgb(247, 251, 174);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+        .body_ciencias{
+            background-color: rgb(203, 255, 169);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+        .body_artes{
+            background-color: rgb(246, 186, 247);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+        .body_ed_fisica{
+            background-color: rgb(181, 227, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+        .body_religiao{
+            background-color: rgb(200, 199, 192);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            color: azure;
+        }
+
+
         h1{
             color: azure;
             text-align: center;
@@ -34,7 +80,18 @@
             text-align: justify;
         }
 
-        header{
+        /*header dos planos*/
+
+        .header_portugues{
+            background-color: rgb(12, 29, 115);
+            border: 5px solid rgb(45, 61, 157);
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .header_matematica{
             background-color: #691C1F;
             border: 5px solid #A92E31;
             border-radius: 10px;
@@ -43,9 +100,86 @@
             box-shadow: 2px 2px 2px black;
         }
 
-        main{
+        .header_ciencias{
+            background-color: #79AB46;
+            border: 5px solid #b7fa74;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .header_historia{
+            background-color: #F25C05;
+            border: 5px solid #f79862;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .header_geografia{
+            background-color: #F2BD02;
+            border: 5px solid #ffe895;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .header_artes{
+            background-color: #281259cd;
+            border: 5px solid #744fc5cd;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .header_ed_fisica{
+            background-color: #2B6D7D;
+            border: 5px solid #55bbd5;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .header_religiao{
+            background-color: #BF9056;
+            border: 5px solid #ffd199;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        /*Fim do header*/
+
+        /*main dos planos*/
+
+
+        .main_portugues{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid rgb(33, 48, 131);
+            border-radius: 5px;
+            color: black;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        .main_matematica{
             background-color: rgb(249, 249, 249);
             border: 4px solid #A92E31;
+            border-radius: 5px;
+            color: black;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        .main_ciencias{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid #a9eb68;
             border-radius: 5px;
             color: black;
             width: 900px;
@@ -53,8 +187,138 @@
             margin: auto;
         }
 
+        .main_historia{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid #f79862;
+            border-radius: 5px;
+            color: black;
+            width: 900px;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        .main_geografia{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid #ffe895;
+            border-radius: 5px;
+            color: black;
+            width: 900px;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        .main_ed_fisica{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid #55bbd5;
+            border-radius: 5px;
+            color: black;
+            width: 900px;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        .main_artes{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid #744fc5cd;
+            border-radius: 5px;
+            color: black;
+            width: 900px;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        .main_religiao{
+            background-color: rgb(249, 249, 249);
+            border: 4px solid #ffd199;
+            border-radius: 5px;
+            color: black;
+            width: 900px;
+            padding: 5px 10px 5px 10px;
+            margin: auto;
+        }
+
+        /*Fim das classes main*/
+
+
+        /*h2 dos planos*/
+
+        .portugues h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(12, 29, 115);
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .main_matematica h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #ab2d31;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .ciencias h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #79AB46;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .historia h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #F25C05;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .geografia h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #F2BD02;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+      
+        .ed_fisica h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #2B6D7D;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .artes h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #281259cd;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .religiao h2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #BF9056;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /*Fim das tags h2*/
+
         li{
             list-style: none;
+            text-align: center;
         }
 
         a{
@@ -64,10 +328,10 @@
 
         }
 
-        .apoio{
+        /* .apoio{
             color: #b50c0c;
             text-decoration: none;
-        }
+        } */
 
         .apoio:hover{
             color: rgb(235, 127, 127);

@@ -2,6 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   var loginForm = document.getElementById('loginForm');
+  localStorage.setItem('host', 'https://api.iaeduc.com.br')  
+
+
   loginForm.addEventListener('submit', fazerLogin);
 });
 
@@ -11,7 +14,7 @@ function fazerLogin(event) {
   var usernameInput = document.querySelector('input[type="text"]');
   var passwordInput = document.querySelector('input[type="password"]');
 
-  fetch('http://191.101.14.34:3000/sessions', {
+  fetch(localStorage.getItem('host') + '/sessions', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
